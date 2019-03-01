@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hzit.provider.dept.mapper.DeptMapper">
+
+	<select id="findById" resultType="Dept" parameterType="Long">
+		select
+		deptno,dname,loc from dept where deptno=#{deptno};
+	</select>
+	<select id="findAll" resultType="Dept">
+		select deptno,dname,loc from
+		dept;
+	</select>
+	<insert id="addDept" parameterType="Dept">
+		INSERT INTO dept(dname,loc)
+		VALUES(#{dname},#{loc});
+	</insert>
+
+</mapper>
